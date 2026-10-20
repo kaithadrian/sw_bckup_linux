@@ -1,0 +1,10 @@
+[Unit]
+Description=Nightly switch configuration backup
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+RandomizedDelaySec=300
+Persistent=true
+
+[Install]
+WantedBy=timers.target

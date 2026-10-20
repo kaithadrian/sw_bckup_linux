@@ -1,0 +1,20 @@
+[Unit]
+Description=Back up network switch configurations
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=switchbackup
+Group=switchbackup
+WorkingDirectory=/opt/switch-backup
+# Local method: configs are saved straight from the switches to /var/backups/switches
+ExecStart=/opt/switch-backup/venv/bin/python /opt/switch-backup/switch_backup.py -o /var/backups/switches
+# TFTP method with the Samba share mounted at /mnt/tftp (replace the line above with):
+# ExecStart=/opt/switch-backup/venv/bin/python /opt/switch-backup/switch_backup.py -o /var/backups/switches -m tftp --tftp-server 192.168.36.87 --tftp-root /mnt/tftp --require-mount
+# RequiresMountsFor=/mnt/tftp
+UMask=0077
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
+# A non-zero exit (any switch failed) shows the unit as failed: see "systemctl status switch-backup"
