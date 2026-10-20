@@ -1,0 +1,4 @@
+name,host,model,credentials,port
+IDFV1,172.16.60.1,sf350,1,
+MDF1,172.16.1.201,c2960,2,
+JCC-Unit1sw1,172.16.81.11,hp,3,
