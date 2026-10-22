@@ -16,7 +16,7 @@ Logins:    copy .env.example to .env and fill in your credentials (CRED_<id>_USE
 Run:       python switch_backup.py                       # back up every switch
            python switch_backup.py --only MDF1 V1        # just these (by name or IP)
            python switch_backup.py --list                # show what would be backed up
-           python switch_backup.py --method tftp --tftp-server 192.168.36.87 ^
+           python switch_backup.py --method tftp --tftp-server 192.168.36.85 ^
                                    --tftp-root C:\\backup\\cisco
 
 Linux / Windows
