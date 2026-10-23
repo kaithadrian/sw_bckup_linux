@@ -86,7 +86,7 @@ from rich.table import Table
 RUN_CONFIG_CMD = "show running-config"
 FOLDER_FMT = "%m%d%Y"       # dated folder name, same as the old script
 FILE_DATE_FMT = "%d%m%y"    # date inside file names, same as the old script
-DEFAULT_TFTP_SERVER = "192.168.36.87"
+DEFAULT_TFTP_SERVER = "192.168.36.85"
 
 
 @dataclass(frozen=True)
